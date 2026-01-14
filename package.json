@@ -1,0 +1,46 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "0.0.0",
+  "description": "TypeScript Boilerplate for Node.js Projects",
+  "license": "MIT",
+  "author": "Munjal Dhamecha",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc --noEmitOnError",
+    "build:watch": "npm run build -- --watch",
+    "clean": "rimraf dist coverage",
+    "commit": "git-cz",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky",
+    "release": "standard-version",
+    "release:mock": "npm run release -- --dry-run",
+    "test": "vitest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
+    "@types/node": "^25.0.8",
+    "@typescript-eslint/eslint-plugin": "^8.53.0",
+    "@typescript-eslint/parser": "^8.53.0",
+    "@vitest/coverage-v8": "^4.0.17",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4",
+    "rimraf": "^6.1.2",
+    "sort-package-json": "^3.6.0",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17"
+  }
+}
