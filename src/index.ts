@@ -1,18 +1,23 @@
-export enum Gender {
-  MALE = 'Male',
-  FEMALE = 'Female',
-}
+import fs from 'node:fs';
+import path from 'node:path';
+export class EnglishLexicon {
+  public static wordsFile = path.join(path.dirname(__dirname), 'data', 'serialized.json');
+  public static words: Set<string> = new Set();
 
-export class Person {
-  name: string;
-  gender: Gender;
+  static {
+    const data = fs.readFileSync(this.wordsFile, 'utf-8');
+    const wordList = JSON.parse(data) as string[];
 
-  constructor(name: string, gender: Gender) {
-    this.name = name;
-    this.gender = gender;
+    wordList.forEach((word) => {
+      this.words.add(word);
+    });
   }
 
-  introduce(): string {
-    return `Hi, I am ${this.name}. I am ${this.gender}`;
+  public static getWords(): string[] {
+    return Array.from(this.words.values());
+  }
+
+  public static hasWord(word: string): boolean {
+    return this.words.has(word);
   }
 }

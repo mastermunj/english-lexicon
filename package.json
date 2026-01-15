@@ -1,15 +1,50 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "english-lexicon",
   "version": "0.0.0",
-  "description": "TypeScript Boilerplate for Node.js Projects",
+  "description": "A comprehensive collection of 470,000+ English dictionary words aggregated from multiple public domain sources",
+  "keywords": [
+    "english",
+    "words",
+    "dictionary",
+    "lexicon",
+    "wordlist",
+    "word-list",
+    "vocabulary",
+    "spell-check",
+    "spellcheck",
+    "spelling",
+    "wordle",
+    "scrabble",
+    "word-game",
+    "text-analysis",
+    "nlp",
+    "natural-language",
+    "autocomplete",
+    "english-words",
+    "dictionary-words"
+  ],
+  "homepage": "https://github.com/mastermunj/english-lexicon#readme",
+  "bugs": {
+    "url": "https://github.com/mastermunj/english-lexicon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mastermunj/english-lexicon.git"
+  },
   "license": "MIT",
   "author": "Munjal Dhamecha",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "data"
+  ],
   "scripts": {
     "build": "npm run clean && tsc --noEmitOnError",
     "build:watch": "npm run build -- --watch",
     "clean": "rimraf dist coverage",
     "commit": "git-cz",
+    "generate": "node dist/list.js",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky",
@@ -36,7 +71,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.0",
     "rimraf": "^6.1.2",
     "sort-package-json": "^3.6.0",
     "standard-version": "^9.5.0",
